@@ -3,6 +3,8 @@ import './App.css';
 import { ProgressProvider } from './ProgressContext';
 import HomeScreen from './HomeScreen';
 import QuizCard from './QuizCard';
+import InstallPWA from './InstallPWA';
+import OfflineIndicator from './OfflineIndicator';
 
 function App() {
   const [currentView, setCurrentView] = useState('home'); // 'home' or 'quiz'
@@ -36,6 +38,9 @@ function App() {
             />
           )}
         </main>
+        
+        {/* PWA Install Banner */}
+        <InstallPWA />
       </div>
     </ProgressProvider>
   );

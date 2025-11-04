@@ -14,25 +14,24 @@ export const useProgress = () => {
 
 // Provider Component
 export const ProgressProvider = ({ children }) => {
-  // Initialize state from localStorage (for when you deploy)
+  // Initialize state from localStorage
   const [totalXP, setTotalXP] = useState(() => {
-    // In production, you'd use: localStorage.getItem('totalXP') || 0
-    return 0;
+    const saved = localStorage.getItem('totalXP');
+    return saved ? parseInt(saved, 10) : 0;
   });
   
   const [streak, setStreak] = useState(() => {
-    // In production: localStorage.getItem('streak') || 0
-    return 0;
+    const saved = localStorage.getItem('streak');
+    return saved ? parseInt(saved, 10) : 0;
   });
   
   const [lastActiveDate, setLastActiveDate] = useState(() => {
-    // In production: localStorage.getItem('lastActiveDate') || null
-    return null;
+    return localStorage.getItem('lastActiveDate') || null;
   });
   
   const [completedLessons, setCompletedLessons] = useState(() => {
-    // In production: JSON.parse(localStorage.getItem('completedLessons') || '[]')
-    return [];
+    const saved = localStorage.getItem('completedLessons');
+    return saved ? JSON.parse(saved) : [];
   });
 
   // Update streak based on activity

@@ -5,7 +5,7 @@ export const lessons = {
       icon: "🇪🇸",
       levels: {
         beginner: {
-          title: "Beginner Basics",
+          title: "Beginner  Basics",
           xp: 10,
           questions: [
             {
